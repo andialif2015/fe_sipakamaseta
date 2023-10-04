@@ -166,31 +166,149 @@ model suketkehilangankk {
   nokk       String   @default("0") @db.VarChar(16)
 }
 
-model suketwaliortu {
+model suketkehilanganstpd {
   id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
   tglL        String   @default("-") @db.VarChar(20)
   alamat      String   @default("") @db.VarChar(100)
-  agama       String   @default("") @db.VarChar(10)
   gender      String   @default("0") @db.VarChar(11)
-  sekolah     String   @default("-") @db.VarChar(50)
-  namewali    String?  @db.VarChar(255)
-  tempatLwali String   @default("") @db.VarChar(20)
-  tglLwali    String   @default("-") @db.VarChar(20)
-  genderwali  String   @default("0") @db.VarChar(11)
-  agamawali   String   @default("") @db.VarChar(10)
-  workwali    String   @default("-") @db.VarChar(15)
-  alamatwali  String   @default("-") @db.VarChar(50)
-  status      Boolean  @default(false)
+  agama       String   @default("") @db.VarChar(10)
+  work        String   @default("-") @db.VarChar(15)
+  nik         String   @default("0") @db.VarChar(16)
+}
+
+model suketkekerabatan {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  alamat      String   @default("") @db.VarChar(100)
+  gender      String   @default("0") @db.VarChar(11)
+  nik         String   @default("0") @db.VarChar(16)
+}
+
+model suketlahirdesa {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  alamat      String   @default("") @db.VarChar(100)
+  ayah        String?  @db.VarChar(255)
+  ibu         String?  @db.VarChar(255)
+}
+
+model suketlokasitanah {
+  id            Int      @id @default(autoincrement())
+  namepemilik   String?  @db.VarChar(255)
+  alamattanah   String   @default("") @db.VarChar(100)
+  luastanah     String   @default("") @db.VarChar(100)
+  luasbangunan  String   @default("") @db.VarChar(100)
+  dusun         String   @default("-") @db.VarChar(15)
+  nosertiftanah String   @default("-") @db.VarChar(16)
+  status        Boolean  @default(false)
+  fileName      String   @default("") @db.VarChar(100)
+}
+
+model suketmenantu {
+  id            Int      @id @default(autoincrement())
+  name          String?  @db.VarChar(255)
+  nohp          String   @db.VarChar(16)
+  tempatL       String   @default("") @db.VarChar(20)
+  tglL          String   @default("-") @db.VarChar(20)
+  alamat        String   @default("") @db.VarChar(100)
+  nameMertua    String?  @db.VarChar(255)
+  tempatLMertua String   @default("") @db.VarChar(20)
+  tglLMertua    String   @default("-") @db.VarChar(20)
+  alamatmertua  String   @default("") @db.VarChar(100)
+  status        Boolean  @default(false)
   fileName    String   @default("") @db.VarChar(100)
+}
+
+model suketpendudukliar {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  alamat      String   @default("") @db.VarChar(100)
+  gender      String   @default("0") @db.VarChar(11)
+  agama       String   @default("") @db.VarChar(10)
+  work        String   @default("-") @db.VarChar(15)
+}
+
+model suketpenegasanwil {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  alamat      String   @default("") @db.VarChar(100)
+  jabatan      String   @default("") @db.VarChar(100)
+}
+
+model suketpengurusanpbb {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  nik         String   @default("0") @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  gender      String   @default("0") @db.VarChar(11)
+  agama       String   @default("") @db.VarChar(10)
+  work        String   @default("-") @db.VarChar(15)
+  alamat      String   @default("") @db.VarChar(100)
+  dusun         String   @default("-") @db.VarChar(15)
+  rtrw        String   @default("") @db.VarChar(10)
+  nama_anak        String?  @db.VarChar(255)
+}
+
+model suketpernyataanwaris {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  work        String   @default("-") @db.VarChar(15)
+  alamat      String   @default("") @db.VarChar(100)
+}
+
+model suketpisahrumah {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  gender      String   @default("0") @db.VarChar(11)
+  agama       String   @default("") @db.VarChar(10)
+  work        String   @default("-") @db.VarChar(15)
+  status      Boolean  @default(false)
+  nik         String   @default("0") @db.VarChar(16)
+  alamat      String   @default("") @db.VarChar(100)
+  dusun         String   @default("-") @db.VarChar(15)
+}
+
+model sukettaksirantanah {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+}
+
+model sukettanah {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+}
+
+model sukettbpd {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
 }
 
 model sukettelahmenikah {
   id            Int      @id @default(autoincrement())
-  createdAt     DateTime @default(now()) @db.Timestamp(0)
   namepria      String?  @db.VarChar(255)
   nohppria      String   @db.VarChar(16)
   tempatLpria   String   @default("") @db.VarChar(20)
@@ -211,9 +329,14 @@ model sukettelahmenikah {
   fileName    String   @default("") @db.VarChar(100)
 }
 
-model suketpengurusankk {
+model suketuntuknikah {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+}
+
+model suketuruskk {
   id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now()) @db.Timestamp(0)
   name      String?  @db.VarChar(255)
   nohp      String   @db.VarChar(16)
   tempatL   String   @default("") @db.VarChar(20)
@@ -226,22 +349,52 @@ model suketpengurusankk {
   fileName    String   @default("") @db.VarChar(100)
 }
 
-model suketmenantu {
-  id            Int      @id @default(autoincrement())
-  createdAt     DateTime @default(now()) @db.Timestamp(0)
-  name          String?  @db.VarChar(255)
-  nohp          String   @db.VarChar(16)
-  tempatL       String   @default("") @db.VarChar(20)
-  tglL          String   @default("-") @db.VarChar(20)
-  alamat        String   @default("") @db.VarChar(100)
-  nameMertua    String?  @db.VarChar(255)
-  tempatLMertua String   @default("") @db.VarChar(20)
-  tglLMertua    String   @default("-") @db.VarChar(20)
-  alamatmertua  String   @default("") @db.VarChar(100)
-  status        Boolean  @default(false)
+model suketwaliortu {
+  id          Int      @id @default(autoincrement())
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  alamat      String   @default("") @db.VarChar(100)
+  agama       String   @default("") @db.VarChar(10)
+  gender      String   @default("0") @db.VarChar(11)
+  sekolah     String   @default("-") @db.VarChar(50)
+  namewali    String?  @db.VarChar(255)
+  tempatLwali String   @default("") @db.VarChar(20)
+  tglLwali    String   @default("-") @db.VarChar(20)
+  genderwali  String   @default("0") @db.VarChar(11)
+  agamawali   String   @default("") @db.VarChar(10)
+  workwali    String   @default("-") @db.VarChar(15)
+  alamatwali  String   @default("-") @db.VarChar(50)
+  status      Boolean  @default(false)
   fileName    String   @default("") @db.VarChar(100)
 }
 
+model superimunisasi {  
+  id        Int      @id @default(autoincrement())
+  name      String?  @db.VarChar(255)
+  nohp      String   @db.VarChar(16)
+  tempatL   String   @default("") @db.VarChar(20)
+  tglL      String   @default("-") @db.VarChar(20)
+  goldar    String   @db.VarChar(2)
+  wargaN    String   @default("") @db.VarChar(20)
+  alamat    String   @default("") @db.VarChar(100)
+  agama       String   @default("") @db.VarChar(10)
+  work      String   @default("-") @db.VarChar(15)
+}
+
+model superutangpiutang {
+  id        Int      @id @default(autoincrement())
+  name      String?  @db.VarChar(255)
+  nohp      String   @db.VarChar(16)
+  alamat    String   @default("") @db.VarChar(100)
+  work      String   @default("-") @db.VarChar(15)
+  umur      Int       $default(0)
+  name_dua   String?  @db.VarChar(255)
+  alamat_dua String   @default("") @db.VarChar(100)
+  work_dua   String   @default("-") @db.VarChar(15)
+  umur_dua   Int       $default(0)
+}
 
 model suketblmpunyarumah {
   createdAt DateTime @default(now()) @db.Timestamp(0)
@@ -258,18 +411,7 @@ model suketblmpunyarumah {
   fileName    String   @default("") @db.VarChar(100)
 }
 
-model suketlokasitanah {
-  createdAt     DateTime @default(now()) @db.Timestamp(0)
-  id            Int      @id @default(autoincrement())
-  namepemilik   String?  @db.VarChar(255)
-  alamattanah   String   @default("") @db.VarChar(100)
-  luastanah     String   @default("") @db.VarChar(100)
-  luasbangunan  String   @default("") @db.VarChar(100)
-  dusun         String   @default("-") @db.VarChar(15)
-  nosertiftanah String   @default("-") @db.VarChar(16)
-  status        Boolean  @default(false)
-  fileName    String   @default("") @db.VarChar(100)
-}
+
 
 model survey{
   id_survey Int @id @default(autoincrement())
