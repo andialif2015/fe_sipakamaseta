@@ -1,34 +1,60 @@
-import {prisma} from "@/../route"
+'use client';
+import { prisma } from "@/../route"
 import { HiArrowSmLeft } from 'react-icons/hi';
 import Link from 'next/link'
 import InputItem from "./inputItem";
+import ModalSurvey from "@/app/administrasi/survey/page";
+import axios from "axios";
+import React from "react";
 
 
-export default function Page(){
+export default function Page() {
 
-    async function addData(dataX : FormData) {
-        
-        'use server'
-        const name = await prisma.suketmenantu.create({
-            data: {
-                name: dataX.get('name') as string,
-                nohp: dataX.get('nohp') as string,
-                tempatL : dataX.get('tempatlahir') as string,
-                tglL:  dataX.get('tgl') as string,
-                alamat: dataX.get('alamat') as string,
-                nameMertua: dataX.get('namemertua') as string,
-                tempatLMertua : dataX.get('tempatlahirmertua') as string,
-                tglLMertua:  dataX.get('tglmertua') as string,
-                alamatmertua: dataX.get('alamatmertua') as string
+  const [isModalOpen, setShowModal] = React.useState(false);
+  const closeModal = () => {
+    setShowModal(false);
+  };
+  const [nama, setNama] = React.useState("");
 
+  async function addData(dataX: FormData) {
 
-            }
-        })
-        
-        // console.log(dataX)
+    const name = await prisma.suketmenantu.create({
+      data: {
+        name: dataX.get('name') as string,
+        nohp: dataX.get('nohp') as string,
+        tempatL: dataX.get('tempatlahir') as string,
+        tglL: dataX.get('tgl') as string,
+        alamat: dataX.get('alamat') as string,
+        nameMertua: dataX.get('namemertua') as string,
+        tempatLMertua: dataX.get('tempatlahirmertua') as string,
+        tglLMertua: dataX.get('tglmertua') as string,
+        alamatmertua: dataX.get('alamatmertua') as string
+      }
+    })
+  }
 
+  async function submitData(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      nohp: formData.get('nohp') as string,
+      tempatL: formData.get('tempatlahir') as string,
+      tglL: formData.get('tgl') as string,
+      alamat: formData.get('alamat') as string,
+      nameMertua: formData.get('namemertua') as string,
+      tempatLMertua: formData.get('tempatlahirmertua') as string,
+      tglLMertua: formData.get('tglmertua') as string,
+      alamatmertua: formData.get('alamatmertua') as string
+    };
+    let wali = await axios.post("http://localhost:3002/api/v1/suketwali/buat", data);
+    if (wali.status) {
+      setNama(data.name);
+      setShowModal(true);
     }
-    return (
+  }
+  return (
 
 
     <div className="min-h-screen">
@@ -40,9 +66,15 @@ export default function Page(){
         <h1 className="font-bold">Surat Keterangan Menantu </h1>
 
       </div>
-    <form className="w-full max-w-lg mx-auto p-4" action={addData}>
-      <InputItem></InputItem>
-      </form> 
+      <form className="w-full max-w-lg mx-auto p-4" onSubmit={submitData}>
+        <InputItem></InputItem>
+      </form>
+      <ModalSurvey
+        show={isModalOpen}
+        onClose={closeModal}
+        name={nama}
+      ></ModalSurvey>
     </div>
-  
-)}
+
+  )
+}

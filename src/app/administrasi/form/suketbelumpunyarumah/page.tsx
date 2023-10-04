@@ -1,34 +1,59 @@
-import {prisma} from "@/../route"
+'use client';
+import { prisma } from "@/../route"
 import { HiArrowSmLeft } from 'react-icons/hi';
 import Link from 'next/link'
 import InputItem from "./inputItem";
+import ModalSurvey from "@/app/administrasi/survey/page";
+import axios from "axios";
+import React from "react";
 
 
-export default function Page(){
+export default function Page() {
 
-    async function addData(dataX : FormData) {
-        
-        'use server'
-        const name = await prisma.suketblmpunyarumah.create({
-            data: {
-                name: dataX.get('name') as string,
-                nik: dataX.get('nik') as string,
-                alamat: dataX.get('alamat') as string,
-                gender: dataX.get('gender') as string,
-                work: dataX.get('work') as string,
-                agama: dataX.get('agama') as string,
-                rtrw: dataX.get('rtrw') as string,
-                dusun: dataX.get('dusun') as string
+  const [isModalOpen, setShowModal] = React.useState(false);
+  const closeModal = () => {
+    setShowModal(false);
+  };
+  const [nama, setNama] = React.useState("");
 
-            }
-        })
-        
-        // console.log(dataX)
+  async function addData(dataX: FormData) {
 
+    const name = await prisma.suketblmpunyarumah.create({
+      data: {
+        name: dataX.get('name') as string,
+        nik: dataX.get('nik') as string,
+        alamat: dataX.get('alamat') as string,
+        gender: dataX.get('gender') as string,
+        work: dataX.get('work') as string,
+        agama: dataX.get('agama') as string,
+        rtrw: dataX.get('rtrw') as string,
+        dusun: dataX.get('dusun') as string
+
+      }
+    })
+  }
+
+  async function submitData(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      nik: formData.get('nik') as string,
+      alamat: formData.get('alamat') as string,
+      gender: formData.get('gender') as string,
+      work: formData.get('work') as string,
+      agama: formData.get('agama') as string,
+      rtrw: formData.get('rtrw') as string,
+      dusun: formData.get('dusun') as string
+    };
+    let wali = await axios.post("http://localhost:3002/api/v1/suketwali/buat", data);
+    if (wali.status) {
+      setNama(data.name);
+      setShowModal(true);
     }
-    return (
-
-
+  }
+  return (
     <div className="min-h-screen">
       <div className="flex flex-row items-center">
         <Link href='/administrasi' passHref>
@@ -38,9 +63,15 @@ export default function Page(){
         <h1 className="font-bold">Surat Keterangan Belum Punya Rumah</h1>
 
       </div>
-    <form className="w-full max-w-lg mx-auto p-4" action={addData}>
-      <InputItem></InputItem>
-      </form> 
+      <form className="w-full max-w-lg mx-auto p-4" onSubmit={submitData}>
+        <InputItem></InputItem>
+      </form>
+
+      <ModalSurvey
+        show={isModalOpen}
+        onClose={closeModal}
+        name={nama}
+      ></ModalSurvey>
     </div>
-  
-)}
+  )
+}
