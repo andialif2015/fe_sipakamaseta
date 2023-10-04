@@ -19,7 +19,7 @@ const surat = [
     { name: 'Surat Keterangan Kekerabatan Anak Kandung', to: '/administrasi/form/suketkekerabatan' },
     { name: 'Surat Keterangan Lahir Desa', to: '/administrasi/form/suketlahirdesa' },
     { name: 'Surat Keterangan Penduduk Liar', to: '/administrasi/form/suketpendudukliar' },
-    { name: 'Surat Keterangan Penugasan Wilayah', to: '/administrasi/form/suketpenegasanwil' },
+    { name: 'Surat Keterangan Penegasan Wilayah', to: '/administrasi/form/suketpenegasanwil' },
     { name: 'Surat Keterangan Aktif Perusahaan', to: '/administrasi/form/suketaktifperusahaan' },
     { name: 'Surat Perjanjian Utang Piutang', to: '/administrasi/form/superutangpiutang' },
     { name: 'Surat Pengantar Imunisasi', to: '/administrasi/form/superimunisasi' },
@@ -30,6 +30,7 @@ const surat = [
     { name: 'Surat Keterangan Pisah Rumah', to: '/administrasi/form/suketpisahrumah' },
     { name: 'Surat Keterangan Pernyataan Waris', to: '/administrasi/form/suketpernyataanwaris' },
     { name: 'Surat Keterangan Pengurusan PBB', to: '/administrasi/form/suketpengurusanpbb' },
+    { name: 'Surat Keterangan Tanah Belum Pernah Diperjualbelikan', to: '/administrasi/form/sukettbpd' }
 
     // {name: '', to:'/administrasi/'},
     // { name: 'Surat Lainnya', to: '/administrasi/customsurat' },
