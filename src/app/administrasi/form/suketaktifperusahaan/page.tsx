@@ -77,7 +77,7 @@ export default function Page() {
           <HiArrowSmLeft className="h-10 w-10 m-4" />
         </Link>
 
-        <h1 className="font-bold">Surat Keterangan Wali Orang Tua</h1>
+        <h1 className="font-bold">Surat Keterangan Aktif Perusahaan</h1>
       </div>
 
       <form className="w-full max-w-lg mx-auto p-4" onSubmit={submitData}>
