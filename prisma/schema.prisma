@@ -66,6 +66,7 @@ model imbS {
   type      String   @default("") @db.VarChar(50)
   buildsize String   @default("") @db.VarChar(30)
   status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketwaliortu {
@@ -110,6 +111,7 @@ model sukettelahmenikah {
   tglnikah      String   @default("") @db.VarChar(20)
   lokasinikah   String   @default("-") @db.VarChar(30)
   status        Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model suketpengurusankk {
@@ -124,6 +126,7 @@ model suketpengurusankk {
   gender    String   @default("0") @db.VarChar(11)
   work      String   @default("-") @db.VarChar(15)
   status    Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model suketmenantu {
@@ -139,6 +142,7 @@ model suketmenantu {
   tglLMertua    String   @default("-") @db.VarChar(20)
   alamatmertua  String   @default("") @db.VarChar(100)
   status        Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model suketdomisili {
@@ -154,6 +158,7 @@ model suketdomisili {
   stsnkh    String   @default("0") @db.VarChar(20)
   alamat    String   @default("") @db.VarChar(100)
   status    Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model suketblmktp {
@@ -167,6 +172,7 @@ model suketblmktp {
   dusun     String   @default("") @db.VarChar(20)
   thnktp    String   @default("") @db.VarChar(10)
   status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketjabatan {
@@ -194,6 +200,7 @@ model suketblmpunyarumah {
   rtrw      String?  @default("-") @db.VarChar(15)
   dusun     String   @default("-") @db.VarChar(15)
   status    Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model suketlokasitanah {
@@ -206,6 +213,7 @@ model suketlokasitanah {
   dusun         String   @default("-") @db.VarChar(15)
   nosertiftanah String   @default("-") @db.VarChar(16)
   status        Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model survey{

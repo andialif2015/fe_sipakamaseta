@@ -44,8 +44,8 @@ export default function Page() {
       dusun: formData.get('dusun') as string,
       thnktp: formData.get('tpktp') as string,
     };
-    let wali = await axios.post("http://localhost:3002/api/v1/suketwali/buat", data);
-    if (wali.status) {
+    let response = await axios.post("http://localhost:3002/api/v1/suketwali/buat", data);
+    if (response.status) {
       setNama(data.name);
       setShowModal(true);
     }

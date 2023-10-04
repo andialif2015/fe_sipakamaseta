@@ -69,6 +69,7 @@ CREATE TABLE `imbS` (
     `type` VARCHAR(50) NOT NULL DEFAULT '',
     `buildsize` VARCHAR(30) NOT NULL DEFAULT '',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -119,6 +120,7 @@ CREATE TABLE `sukettelahmenikah` (
     `tglnikah` VARCHAR(20) NOT NULL DEFAULT '',
     `lokasinikah` VARCHAR(30) NOT NULL DEFAULT '-',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -136,6 +138,7 @@ CREATE TABLE `suketpengurusankk` (
     `gender` VARCHAR(11) NOT NULL DEFAULT '0',
     `work` VARCHAR(15) NOT NULL DEFAULT '-',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -154,6 +157,7 @@ CREATE TABLE `suketmenantu` (
     `tglLMertua` VARCHAR(20) NOT NULL DEFAULT '-',
     `alamatmertua` VARCHAR(100) NOT NULL DEFAULT '',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -172,6 +176,7 @@ CREATE TABLE `suketdomisili` (
     `stsnkh` VARCHAR(20) NOT NULL DEFAULT '0',
     `alamat` VARCHAR(100) NOT NULL DEFAULT '',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -188,6 +193,7 @@ CREATE TABLE `suketblmktp` (
     `dusun` VARCHAR(20) NOT NULL DEFAULT '',
     `thnktp` VARCHAR(10) NOT NULL DEFAULT '',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -221,6 +227,7 @@ CREATE TABLE `suketblmpunyarumah` (
     `rtrw` VARCHAR(15) NULL DEFAULT '-',
     `dusun` VARCHAR(15) NOT NULL DEFAULT '-',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -236,6 +243,7 @@ CREATE TABLE `suketlokasitanah` (
     `dusun` VARCHAR(15) NOT NULL DEFAULT '-',
     `nosertiftanah` VARCHAR(16) NOT NULL DEFAULT '-',
     `status` BOOLEAN NOT NULL DEFAULT false,
+    `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
