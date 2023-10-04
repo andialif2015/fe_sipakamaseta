@@ -1,0 +1,222 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model post {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(255)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  content   String   @db.Text
+  published Boolean  @default(false)
+  kontak    String   @default("0") @db.VarChar(50)
+  price     String   @default("0") @db.VarChar(20)
+}
+
+model profile {
+  id     Int     @id @default(autoincrement())
+  bio    String? @db.Text
+  userId Int     @unique(map: "userId")
+  user   user    @relation(fields: [userId], references: [id], onUpdate: Restrict, map: "profile_ibfk_1")
+}
+
+model user {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+  alamat  String   @default("") @db.VarChar(100)
+  nowa    String   @db.VarChar(16)
+  ttl     String   @default("-") @db.VarChar(20)
+  profile profile?
+}
+
+model spfromdesa {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  name      String?  @db.VarChar(255)
+  nohp      String   @db.VarChar(16)
+  nik       String   @default("0") @db.VarChar(16)
+  alamat    String   @default("") @db.VarChar(100)
+  wargaN    String   @default("") @db.VarChar(20)
+  tempatL   String   @default("") @db.VarChar(20)
+  tglL      String   @default("-") @db.VarChar(20)
+  agama     String   @default("") @db.VarChar(10)
+  work      String   @default("-") @db.VarChar(15)
+  tujuan    String   @default("-") @db.VarChar(20)
+  status    Boolean  @default(false)
+  fileName  String?  @default("") @db.VarChar(100)
+}
+
+model imbS {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  name      String?  @db.VarChar(255)
+  nohp      String   @db.VarChar(16)
+  tempatL   String   @default("") @db.VarChar(20)
+  tglL      String   @default("-") @db.VarChar(20)
+  nik       String   @default("0") @db.VarChar(16)
+  gender    String   @default("0") @db.VarChar(11)
+  agama     String   @default("") @db.VarChar(10)
+  work      String   @default("-") @db.VarChar(15)
+  alamat    String   @default("") @db.VarChar(100)
+  alamatB   String   @default("-") @db.VarChar(50)
+  type      String   @default("") @db.VarChar(50)
+  buildsize String   @default("") @db.VarChar(30)
+  status    Boolean  @default(false)
+}
+
+model suketwaliortu {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now()) @db.Timestamp(0)
+  name        String?  @db.VarChar(255)
+  nohp        String   @db.VarChar(16)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  alamat      String   @default("") @db.VarChar(100)
+  agama       String   @default("") @db.VarChar(10)
+  gender      String   @default("0") @db.VarChar(11)
+  sekolah     String   @default("-") @db.VarChar(50)
+  namewali    String?  @db.VarChar(255)
+  tempatLwali String   @default("") @db.VarChar(20)
+  tglLwali    String   @default("-") @db.VarChar(20)
+  genderwali  String   @default("0") @db.VarChar(11)
+  agamawali   String   @default("") @db.VarChar(10)
+  workwali    String   @default("-") @db.VarChar(15)
+  alamatwali  String   @default("-") @db.VarChar(50)
+  status      Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
+}
+
+model sukettelahmenikah {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now()) @db.Timestamp(0)
+  namepria      String?  @db.VarChar(255)
+  nohppria      String   @db.VarChar(16)
+  tempatLpria   String   @default("") @db.VarChar(20)
+  tglLpria      String   @default("-") @db.VarChar(20)
+  agamapria     String   @default("") @db.VarChar(10)
+  workpria      String   @default("-") @db.VarChar(15)
+  alamatpria    String   @default("") @db.VarChar(100)
+  namewanita    String?  @db.VarChar(255)
+  nohpwanita    String   @db.VarChar(16)
+  tempatLwanita String   @default("") @db.VarChar(20)
+  tglLwanita    String   @default("-") @db.VarChar(20)
+  agamawanita   String   @default("") @db.VarChar(10)
+  workwanita    String   @default("-") @db.VarChar(15)
+  alamatwanita  String   @default("") @db.VarChar(100)
+  tglnikah      String   @default("") @db.VarChar(20)
+  lokasinikah   String   @default("-") @db.VarChar(30)
+  status        Boolean  @default(false)
+}
+
+model suketpengurusankk {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  name      String?  @db.VarChar(255)
+  nohp      String   @db.VarChar(16)
+  tempatL   String   @default("") @db.VarChar(20)
+  tglL      String   @default("-") @db.VarChar(20)
+  alamat    String   @default("") @db.VarChar(100)
+  agama     String   @default("") @db.VarChar(10)
+  gender    String   @default("0") @db.VarChar(11)
+  work      String   @default("-") @db.VarChar(15)
+  status    Boolean  @default(false)
+}
+
+model suketmenantu {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now()) @db.Timestamp(0)
+  name          String?  @db.VarChar(255)
+  nohp          String   @db.VarChar(16)
+  tempatL       String   @default("") @db.VarChar(20)
+  tglL          String   @default("-") @db.VarChar(20)
+  alamat        String   @default("") @db.VarChar(100)
+  nameMertua    String?  @db.VarChar(255)
+  tempatLMertua String   @default("") @db.VarChar(20)
+  tglLMertua    String   @default("-") @db.VarChar(20)
+  alamatmertua  String   @default("") @db.VarChar(100)
+  status        Boolean  @default(false)
+}
+
+model suketdomisili {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  name      String?  @db.VarChar(255)
+  tempatL   String   @default("") @db.VarChar(20)
+  tglL      String   @default("-") @db.VarChar(20)
+  gender    String   @default("0") @db.VarChar(11)
+  agama     String   @default("") @db.VarChar(10)
+  work      String   @default("-") @db.VarChar(15)
+  nik       String   @default("0") @db.VarChar(16)
+  stsnkh    String   @default("0") @db.VarChar(20)
+  alamat    String   @default("") @db.VarChar(100)
+  status    Boolean  @default(false)
+}
+
+model suketblmktp {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  name      String?  @db.VarChar(255)
+  nik       String   @default("0") @db.VarChar(16)
+  tempatL   String   @default("") @db.VarChar(20)
+  tglL      String   @default("-") @db.VarChar(20)
+  alamat    String   @default("") @db.VarChar(100)
+  dusun     String   @default("") @db.VarChar(20)
+  thnktp    String   @default("") @db.VarChar(10)
+  status    Boolean  @default(false)
+}
+
+model suketjabatan {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now()) @db.Timestamp(0)
+  name        String?  @db.VarChar(255)
+  tempatL     String   @default("") @db.VarChar(20)
+  tglL        String   @default("-") @db.VarChar(20)
+  gender      String   @default("0") @db.VarChar(11)
+  alamat      String   @default("") @db.VarChar(100)
+  lamajabatan String   @default("") @db.VarChar(50)
+  jabatan     String   @default("") @db.VarChar(20)
+  status      Boolean  @default(false)
+}
+
+model suketblmpunyarumah {
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  id        Int      @id @default(autoincrement())
+  name      String?  @db.VarChar(255)
+  nik       String   @default("0") @db.VarChar(16)
+  alamat    String   @default("") @db.VarChar(100)
+  gender    String   @default("0") @db.VarChar(11)
+  work      String   @default("-") @db.VarChar(15)
+  agama     String   @default("") @db.VarChar(10)
+  rtrw      String?  @default("-") @db.VarChar(15)
+  dusun     String   @default("-") @db.VarChar(15)
+  status    Boolean  @default(false)
+}
+
+model suketlokasitanah {
+  createdAt     DateTime @default(now()) @db.Timestamp(0)
+  id            Int      @id @default(autoincrement())
+  namepemilik   String?  @db.VarChar(255)
+  alamattanah   String   @default("") @db.VarChar(100)
+  luastanah     String   @default("") @db.VarChar(100)
+  luasbangunan  String   @default("") @db.VarChar(100)
+  dusun         String   @default("-") @db.VarChar(15)
+  nosertiftanah String   @default("-") @db.VarChar(16)
+  status        Boolean  @default(false)
+}
+
+model survey{
+  id_survey Int @id @default(autoincrement())
+  nama String @default("") @db.VarChar(255)
+  rating Int @default(0)
+  kritik_saran String @db.Text
+  praktis Boolean @db.TinyInt
+  cepat Boolean @db.TinyInt
+  informasi Boolean @db.TinyInt
+  modern Boolean @db.TinyInt
+  pelayanan Boolean @db.TinyInt
+  created_at DateTime @default(now()) @db.Timestamp(0)
+}
