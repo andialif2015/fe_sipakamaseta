@@ -87,7 +87,7 @@ export default function InputItem() {
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            name="agama"
+            name="work"
             type="text"
           />
         </div>
@@ -112,7 +112,7 @@ export default function InputItem() {
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            name="name"
+            name="name_dua"
             type="text"
             placeholder="Muh. Gibran"
           />
@@ -126,7 +126,7 @@ export default function InputItem() {
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            name="alamat"
+            name="alamat_dua"
             type="text"
             placeholder="contoh: Jl. Melati no. 4"
           />
@@ -139,7 +139,7 @@ export default function InputItem() {
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            name="agama"
+            name="work_dua"
             type="text"
           />
         </div>
@@ -151,7 +151,7 @@ export default function InputItem() {
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            name="umur"
+            name="umur_dua"
             type="text"
           />
         </div>

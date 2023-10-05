@@ -15,33 +15,6 @@ export default function Page() {
     };
     const [nama, setNama] = React.useState("");
 
-    async function addData(dataX: FormData) {
-
-        const name = await prisma.suketwaliortu.create({
-            data: {
-                name: dataX.get('name') as string,
-                nohp: dataX.get('nohp') as string,
-                tempatL: dataX.get('tempatlahir') as string,
-                tglL: dataX.get('tgl') as string,
-                alamat: dataX.get('alamat') as string,
-                agama: dataX.get('agama') as string,
-                gender: dataX.get('gender') as string,
-                sekolah: dataX.get('sekolah') as string,
-                namewali: dataX.get('namewali') as string,
-                tempatLwali: dataX.get('tempatlahirwali') as string,
-                tglLwali: dataX.get('tglwali') as string,
-                alamatwali: dataX.get('alamatwali') as string,
-                genderwali: dataX.get('genderwali') as string,
-                agamawali: dataX.get('agamawali') as string,
-                workwali: dataX.get('workwali') as string,
-            }
-        });
-
-
-        // console.log(dataX)
-
-    }
-
     async function submitData(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
@@ -52,16 +25,8 @@ export default function Page() {
             tempatL: formData.get("tempatlahir") as string,
             tglL: formData.get("tgl") as string,
             alamat: formData.get("alamat") as string,
-            agama: formData.get("agama") as string,
             gender: formData.get("gender") as string,
-            sekolah: formData.get("sekolah") as string,
-            namewali: formData.get("namewali") as string,
-            tempatLwali: formData.get("tempatlahirwali") as string,
-            tglLwali: formData.get("tglwali") as string,
-            alamatwali: formData.get("alamatwali") as string,
-            genderwali: formData.get("genderwali") as string,
-            agamawali: formData.get("agamawali") as string,
-            workwali: formData.get("workwali") as string,
+            nik: formData.get("nik") as string,
         };
         let wali = await axios.post("http://localhost:3002/api/v1/suketwali/buat", data);
         if (wali.status) {

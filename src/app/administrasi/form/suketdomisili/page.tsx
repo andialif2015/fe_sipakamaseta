@@ -14,24 +14,7 @@ export default function Page() {
   const closeModal = () => {
     setShowModal(false);
   };
-
   const [nama, setNama] = React.useState("");
-
-  async function addData(dataX: FormData) {
-    const name = await prisma.suketdomisili.create({
-      data: {
-        name: dataX.get('name') as string,
-        tempatL: dataX.get('tempatlahir') as string,
-        tglL: dataX.get('tgl') as string,
-        gender: dataX.get('gender') as string,
-        agama: dataX.get('agama') as string,
-        work: dataX.get('pekerjaan') as string,
-        nik: dataX.get('nik') as string,
-        stsnkh: dataX.get('stsnkh') as string,
-        alamat: dataX.get('alamat') as string,
-      }
-    })
-  }
 
   async function submitData(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

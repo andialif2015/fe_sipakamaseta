@@ -16,22 +16,7 @@ export default function Page() {
   };
   const [nama, setNama] = React.useState("");
 
-  async function addData(dataX: FormData) {
 
-    const name = await prisma.suketmenantu.create({
-      data: {
-        name: dataX.get('name') as string,
-        nohp: dataX.get('nohp') as string,
-        tempatL: dataX.get('tempatlahir') as string,
-        tglL: dataX.get('tgl') as string,
-        alamat: dataX.get('alamat') as string,
-        nameMertua: dataX.get('namemertua') as string,
-        tempatLMertua: dataX.get('tempatlahirmertua') as string,
-        tglLMertua: dataX.get('tglmertua') as string,
-        alamatmertua: dataX.get('alamatmertua') as string
-      }
-    })
-  }
 
   async function submitData(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
