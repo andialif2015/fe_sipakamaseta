@@ -76,11 +76,13 @@ model spkedesa {
   tempatL     String   @default("") @db.VarChar(20)
   tglL        String   @default("-") @db.VarChar(20)
   nik         String   @default("0") @db.VarChar(16)
-  nokk       String   @default("0") @db.VarChar(16)
-  alamat    String   @default("") @db.VarChar(100)
+  nokk        String   @default("0") @db.VarChar(16)
+  alamat      String   @default("") @db.VarChar(100)
   gender      String   @default("0") @db.VarChar(11)
   agama       String   @default("") @db.VarChar(10)
-  work      String   @default("-") @db.VarChar(15)
+  work        String   @default("-") @db.VarChar(15)
+  dusun       String   @default("") @db.VarChar(20)
+  tujuan      String   @db.VarChar(255)
 }
 
 model suketaktifperusahaan {
