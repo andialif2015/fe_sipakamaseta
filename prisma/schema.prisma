@@ -83,12 +83,16 @@ model spkedesa {
   work        String   @default("-") @db.VarChar(15)
   dusun       String   @default("") @db.VarChar(20)
   tujuan      String   @db.VarChar(255)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketaktifperusahaan {
   id          Int      @id @default(autoincrement())
   namept      String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketbelumpunyarumah {
@@ -102,6 +106,8 @@ model suketbelumpunyarumah {
   work        String   @default("-") @db.VarChar(15)
   rtrw        String   @default("") @db.VarChar(10)
   dusun     String   @default("") @db.VarChar(20)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketblmktp {
@@ -142,6 +148,8 @@ model suketghoib {
   tglL      String   @default("-") @db.VarChar(20)
   gender    String   @default("0") @db.VarChar(11)
   alamat    String   @default("") @db.VarChar(100)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketjabatan {
@@ -154,7 +162,8 @@ model suketjabatan {
   alamat      String   @default("") @db.VarChar(100)
   lamajabatan String   @default("") @db.VarChar(50)
   jabatan     String   @default("") @db.VarChar(20)
-  status      Boolean  @default(false)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketkehilangankk {
@@ -166,6 +175,8 @@ model suketkehilangankk {
   alamat      String   @default("") @db.VarChar(100)
   nik       String   @default("0") @db.VarChar(16)
   nokk       String   @default("0") @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketkehilanganstpd {
@@ -179,6 +190,8 @@ model suketkehilanganstpd {
   agama       String   @default("") @db.VarChar(10)
   work        String   @default("-") @db.VarChar(15)
   nik         String   @default("0") @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketkekerabatan {
@@ -190,6 +203,8 @@ model suketkekerabatan {
   alamat      String   @default("") @db.VarChar(100)
   gender      String   @default("0") @db.VarChar(11)
   nik         String   @default("0") @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketlahirdesa {
@@ -201,6 +216,8 @@ model suketlahirdesa {
   alamat      String   @default("") @db.VarChar(100)
   ayah        String?  @db.VarChar(255)
   ibu         String?  @db.VarChar(255)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketlokasitanah {
@@ -240,6 +257,8 @@ model suketpendudukliar {
   gender      String   @default("0") @db.VarChar(11)
   agama       String   @default("") @db.VarChar(10)
   work        String   @default("-") @db.VarChar(15)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketpenegasanwil {
@@ -248,6 +267,8 @@ model suketpenegasanwil {
   nohp        String   @db.VarChar(16)
   alamat      String   @default("") @db.VarChar(100)
   jabatan      String   @default("") @db.VarChar(100)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketpengurusanpbb {
@@ -264,6 +285,8 @@ model suketpengurusanpbb {
   dusun         String   @default("-") @db.VarChar(15)
   rtrw        String   @default("") @db.VarChar(10)
   nama_anak        String?  @db.VarChar(255)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketpernyataanwaris {
@@ -274,6 +297,8 @@ model suketpernyataanwaris {
   tglL        String   @default("-") @db.VarChar(20)
   work        String   @default("-") @db.VarChar(15)
   alamat      String   @default("") @db.VarChar(100)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketpisahrumah {
@@ -289,24 +314,32 @@ model suketpisahrumah {
   nik         String   @default("0") @db.VarChar(16)
   alamat      String   @default("") @db.VarChar(100)
   dusun         String   @default("-") @db.VarChar(15)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model sukettaksirantanah {
   id          Int      @id @default(autoincrement())
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model sukettanah {
   id          Int      @id @default(autoincrement())
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model sukettbpd {
   id          Int      @id @default(autoincrement())
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model sukettelahmenikah {
@@ -335,6 +368,8 @@ model suketuntuknikah {
   id          Int      @id @default(autoincrement())
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketuruskk {
@@ -383,6 +418,8 @@ model superimunisasi {
   alamat    String   @default("") @db.VarChar(100)
   agama       String   @default("") @db.VarChar(10)
   work      String   @default("-") @db.VarChar(15)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model superutangpiutang {
@@ -391,11 +428,13 @@ model superutangpiutang {
   nohp      String   @db.VarChar(16)
   alamat    String   @default("") @db.VarChar(100)
   work      String   @default("-") @db.VarChar(15)
-  umur      Int       $default(0)
+  umur      Int       @default(0)
   name_dua   String?  @db.VarChar(255)
   alamat_dua String   @default("") @db.VarChar(100)
   work_dua   String   @default("-") @db.VarChar(15)
-  umur_dua   Int       $default(0)
+  umur_dua   Int       @default(0)
+  status    Boolean  @default(false)
+  fileName  String   @default("") @db.VarChar(100)
 }
 
 model suketblmpunyarumah {
@@ -412,8 +451,6 @@ model suketblmpunyarumah {
   status    Boolean  @default(false)
   fileName    String   @default("") @db.VarChar(100)
 }
-
-
 
 model survey{
   id_survey Int @id @default(autoincrement())
