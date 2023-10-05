@@ -179,6 +179,30 @@ export default function InputItem() {
           />
         </div>
       </div>
+      <div className="flex flex-wrap -mx-3 mb-2">
+        <div className="w-full px-3 mb-6 md:mb-0">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Dusun
+          </label>
+          <input
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            name="dusun"
+            type="text"
+          />
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-3 mb-2">
+        <div className="w-full px-3 mb-6 md:mb-0">
+          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Tujuan
+          </label>
+          <input
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            name="tujuan"
+            type="text"
+          />
+        </div>
+      </div>
 
       <button type="submit" className="bg-blue-500 rounded-lg text-white p-3">
         Submit
