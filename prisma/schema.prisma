@@ -310,12 +310,11 @@ model suketpisahrumah {
   gender      String   @default("0") @db.VarChar(11)
   agama       String   @default("") @db.VarChar(10)
   work        String   @default("-") @db.VarChar(15)
-  status      Boolean  @default(false)
   nik         String   @default("0") @db.VarChar(16)
   alamat      String   @default("") @db.VarChar(100)
-  dusun         String   @default("-") @db.VarChar(15)
-  status    Boolean  @default(false)
-  fileName  String   @default("") @db.VarChar(100)
+  dusun       String   @default("-") @db.VarChar(15)
+  status      Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model sukettaksirantanah {
