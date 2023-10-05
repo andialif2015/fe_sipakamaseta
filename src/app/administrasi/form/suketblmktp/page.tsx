@@ -15,28 +15,13 @@ export default function Page() {
   };
   const [nama, setNama] = React.useState("");
 
-  async function addData(dataX: FormData) {
-
-    const name = await prisma.suketblmktp.create({
-      data: {
-        name: dataX.get('name') as string,
-        nik: dataX.get('nik') as string,
-        tempatL: dataX.get('tempatlahir') as string,
-        tglL: dataX.get('tgl') as string,
-        alamat: dataX.get('alamat') as string,
-        dusun: dataX.get('dusun') as string,
-        thnktp: dataX.get('tpktp') as string,
-      }
-    })
-
-  }
-
   async function submitData(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
     const data = {
       name: formData.get('name') as string,
+      nohp: formData.get('nohp') as string,
       nik: formData.get('nik') as string,
       tempatL: formData.get('tempatlahir') as string,
       tglL: formData.get('tgl') as string,
