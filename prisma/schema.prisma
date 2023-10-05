@@ -173,8 +173,9 @@ model suketkehilangankk {
   tempatL     String   @default("") @db.VarChar(20)
   tglL        String   @default("-") @db.VarChar(20)
   alamat      String   @default("") @db.VarChar(100)
-  nik       String   @default("0") @db.VarChar(16)
-  nokk       String   @default("0") @db.VarChar(16)
+  nik         String   @default("0") @db.VarChar(16)
+  nokk        String   @default("0") @db.VarChar(16)
+  alasan      String   @db.VarChar(255)
   status    Boolean  @default(false)
   fileName  String   @default("") @db.VarChar(100)
 }
