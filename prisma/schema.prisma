@@ -71,6 +71,7 @@ model spfromdesa {
 
 model spkedesa {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -89,6 +90,7 @@ model spkedesa {
 
 model suketaktifperusahaan {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   namept      String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   status    Boolean  @default(false)
@@ -97,6 +99,7 @@ model suketaktifperusahaan {
 
 model suketbelumpunyarumah {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   nik         String   @default("0") @db.VarChar(16)
@@ -112,6 +115,7 @@ model suketbelumpunyarumah {
 
 model suketblmktp {
   id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name      String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   nik       String   @default("0") @db.VarChar(16)
@@ -126,6 +130,7 @@ model suketblmktp {
 
 model suketdomisili {
   id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name      String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL   String   @default("") @db.VarChar(20)
@@ -142,6 +147,7 @@ model suketdomisili {
 
 model suketghoib {
   id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name      String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL   String   @default("") @db.VarChar(20)
@@ -154,6 +160,7 @@ model suketghoib {
 
 model suketjabatan {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -168,6 +175,7 @@ model suketjabatan {
 
 model suketkehilangankk {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -182,6 +190,7 @@ model suketkehilangankk {
 
 model suketkehilanganstpd {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -197,6 +206,7 @@ model suketkehilanganstpd {
 
 model suketkekerabatan {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -210,6 +220,7 @@ model suketkekerabatan {
 
 model suketlahirdesa {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -223,6 +234,7 @@ model suketlahirdesa {
 
 model suketlokasitanah {
   id            Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   namepemilik   String?  @db.VarChar(255)
   alamattanah   String   @default("") @db.VarChar(100)
   luastanah     String   @default("") @db.VarChar(100)
@@ -235,6 +247,7 @@ model suketlokasitanah {
 
 model suketmenantu {
   id            Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name          String?  @db.VarChar(255)
   nohp          String   @db.VarChar(16)
   tempatL       String   @default("") @db.VarChar(20)
@@ -250,6 +263,7 @@ model suketmenantu {
 
 model suketpendudukliar {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -264,6 +278,7 @@ model suketpendudukliar {
 
 model suketpenegasanwil {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   alamat      String   @default("") @db.VarChar(100)
@@ -274,6 +289,7 @@ model suketpenegasanwil {
 
 model suketpengurusanpbb {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   nik         String   @default("0") @db.VarChar(16)
@@ -292,6 +308,7 @@ model suketpengurusanpbb {
 
 model suketpernyataanwaris {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -304,6 +321,7 @@ model suketpernyataanwaris {
 
 model suketpisahrumah {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -320,6 +338,7 @@ model suketpisahrumah {
 
 model sukettaksirantanah {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   status    Boolean  @default(false)
@@ -328,6 +347,7 @@ model sukettaksirantanah {
 
 model sukettanah {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   status    Boolean  @default(false)
@@ -336,6 +356,7 @@ model sukettanah {
 
 model sukettbpd {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   status    Boolean  @default(false)
@@ -344,6 +365,7 @@ model sukettbpd {
 
 model sukettelahmenikah {
   id            Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   namepria      String?  @db.VarChar(255)
   nohppria      String   @db.VarChar(16)
   tempatLpria   String   @default("") @db.VarChar(20)
@@ -366,6 +388,7 @@ model sukettelahmenikah {
 
 model suketuntuknikah {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   status    Boolean  @default(false)
@@ -374,6 +397,7 @@ model suketuntuknikah {
 
 model suketuruskk {
   id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name      String?  @db.VarChar(255)
   nohp      String   @db.VarChar(16)
   tempatL   String   @default("") @db.VarChar(20)
@@ -388,6 +412,7 @@ model suketuruskk {
 
 model suketwaliortu {
   id          Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name        String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
   tempatL     String   @default("") @db.VarChar(20)
@@ -409,6 +434,7 @@ model suketwaliortu {
 
 model superimunisasi {  
   id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name      String?  @db.VarChar(255)
   nohp      String   @db.VarChar(16)
   tempatL   String   @default("") @db.VarChar(20)
@@ -424,6 +450,7 @@ model superimunisasi {
 
 model superutangpiutang {
   id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamp(0)
   name      String?  @db.VarChar(255)
   nohp      String   @db.VarChar(16)
   alamat    String   @default("") @db.VarChar(100)
