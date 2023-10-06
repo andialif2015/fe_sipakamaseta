@@ -77,6 +77,7 @@ CREATE TABLE `spfromdesa` (
 -- CreateTable
 CREATE TABLE `spkedesa` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -98,6 +99,7 @@ CREATE TABLE `spkedesa` (
 -- CreateTable
 CREATE TABLE `suketaktifperusahaan` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `namept` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `status` BOOLEAN NOT NULL DEFAULT false,
@@ -109,6 +111,7 @@ CREATE TABLE `suketaktifperusahaan` (
 -- CreateTable
 CREATE TABLE `suketbelumpunyarumah` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `nik` VARCHAR(16) NOT NULL DEFAULT '0',
@@ -127,6 +130,7 @@ CREATE TABLE `suketbelumpunyarumah` (
 -- CreateTable
 CREATE TABLE `suketblmktp` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `nik` VARCHAR(16) NOT NULL DEFAULT '0',
@@ -144,6 +148,7 @@ CREATE TABLE `suketblmktp` (
 -- CreateTable
 CREATE TABLE `suketdomisili` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -163,6 +168,7 @@ CREATE TABLE `suketdomisili` (
 -- CreateTable
 CREATE TABLE `suketghoib` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -178,6 +184,7 @@ CREATE TABLE `suketghoib` (
 -- CreateTable
 CREATE TABLE `suketjabatan` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -195,6 +202,7 @@ CREATE TABLE `suketjabatan` (
 -- CreateTable
 CREATE TABLE `suketkehilangankk` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -202,6 +210,7 @@ CREATE TABLE `suketkehilangankk` (
     `alamat` VARCHAR(100) NOT NULL DEFAULT '',
     `nik` VARCHAR(16) NOT NULL DEFAULT '0',
     `nokk` VARCHAR(16) NOT NULL DEFAULT '0',
+    `alasan` VARCHAR(255) NOT NULL,
     `status` BOOLEAN NOT NULL DEFAULT false,
     `fileName` VARCHAR(100) NOT NULL DEFAULT '',
 
@@ -211,6 +220,7 @@ CREATE TABLE `suketkehilangankk` (
 -- CreateTable
 CREATE TABLE `suketkehilanganstpd` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -229,6 +239,7 @@ CREATE TABLE `suketkehilanganstpd` (
 -- CreateTable
 CREATE TABLE `suketkekerabatan` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -245,6 +256,7 @@ CREATE TABLE `suketkekerabatan` (
 -- CreateTable
 CREATE TABLE `suketlahirdesa` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -261,6 +273,7 @@ CREATE TABLE `suketlahirdesa` (
 -- CreateTable
 CREATE TABLE `suketlokasitanah` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `namepemilik` VARCHAR(255) NULL,
     `alamattanah` VARCHAR(100) NOT NULL DEFAULT '',
     `luastanah` VARCHAR(100) NOT NULL DEFAULT '',
@@ -276,6 +289,7 @@ CREATE TABLE `suketlokasitanah` (
 -- CreateTable
 CREATE TABLE `suketmenantu` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -294,6 +308,7 @@ CREATE TABLE `suketmenantu` (
 -- CreateTable
 CREATE TABLE `suketpendudukliar` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -311,6 +326,7 @@ CREATE TABLE `suketpendudukliar` (
 -- CreateTable
 CREATE TABLE `suketpenegasanwil` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `alamat` VARCHAR(100) NOT NULL DEFAULT '',
@@ -324,6 +340,7 @@ CREATE TABLE `suketpenegasanwil` (
 -- CreateTable
 CREATE TABLE `suketpengurusanpbb` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `nik` VARCHAR(16) NOT NULL DEFAULT '0',
@@ -345,6 +362,7 @@ CREATE TABLE `suketpengurusanpbb` (
 -- CreateTable
 CREATE TABLE `suketpernyataanwaris` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -360,6 +378,7 @@ CREATE TABLE `suketpernyataanwaris` (
 -- CreateTable
 CREATE TABLE `suketpisahrumah` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -379,6 +398,7 @@ CREATE TABLE `suketpisahrumah` (
 -- CreateTable
 CREATE TABLE `sukettaksirantanah` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `status` BOOLEAN NOT NULL DEFAULT false,
@@ -390,6 +410,7 @@ CREATE TABLE `sukettaksirantanah` (
 -- CreateTable
 CREATE TABLE `sukettanah` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `status` BOOLEAN NOT NULL DEFAULT false,
@@ -401,6 +422,7 @@ CREATE TABLE `sukettanah` (
 -- CreateTable
 CREATE TABLE `sukettbpd` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `status` BOOLEAN NOT NULL DEFAULT false,
@@ -412,6 +434,7 @@ CREATE TABLE `sukettbpd` (
 -- CreateTable
 CREATE TABLE `sukettelahmenikah` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `namepria` VARCHAR(255) NULL,
     `nohppria` VARCHAR(16) NOT NULL,
     `tempatLpria` VARCHAR(20) NOT NULL DEFAULT '',
@@ -437,6 +460,7 @@ CREATE TABLE `sukettelahmenikah` (
 -- CreateTable
 CREATE TABLE `suketuntuknikah` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `status` BOOLEAN NOT NULL DEFAULT false,
@@ -448,6 +472,7 @@ CREATE TABLE `suketuntuknikah` (
 -- CreateTable
 CREATE TABLE `suketuruskk` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -465,6 +490,7 @@ CREATE TABLE `suketuruskk` (
 -- CreateTable
 CREATE TABLE `suketwaliortu` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -489,6 +515,7 @@ CREATE TABLE `suketwaliortu` (
 -- CreateTable
 CREATE TABLE `superimunisasi` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `tempatL` VARCHAR(20) NOT NULL DEFAULT '',
@@ -507,6 +534,7 @@ CREATE TABLE `superimunisasi` (
 -- CreateTable
 CREATE TABLE `superutangpiutang` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `name` VARCHAR(255) NULL,
     `nohp` VARCHAR(16) NOT NULL,
     `alamat` VARCHAR(100) NOT NULL DEFAULT '',

@@ -90,11 +90,11 @@ model spkedesa {
 
 model suketaktifperusahaan {
   id          Int      @id @default(autoincrement())
-  createdAt DateTime @default(now()) @db.Timestamp(0)
+  createdAt   DateTime @default(now()) @db.Timestamp(0)
   namept      String?  @db.VarChar(255)
   nohp        String   @db.VarChar(16)
-  status    Boolean  @default(false)
-  fileName  String   @default("") @db.VarChar(100)
+  status      Boolean  @default(false)
+  fileName    String   @default("") @db.VarChar(100)
 }
 
 model suketbelumpunyarumah {
