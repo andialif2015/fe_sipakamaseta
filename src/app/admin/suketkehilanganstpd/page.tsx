@@ -5,10 +5,10 @@ import { revalidatePath, } from "next/cache"
 export default async function Page() {
     async function refreshData() {
         'use server'
-        revalidatePath('/admin/imbsementara')
+        revalidatePath('/admin/suketkehilanganstpd')
     }
 
-    const postItem = await prisma.imbS.findMany({})
+    const postItem = await prisma.suketkehilanganstpd.findMany({})
 
     return (
         <div className="min-h-screen ml-64 p-4">

@@ -1,20 +1,15 @@
-import {prisma} from "@/../route"
+import { prisma } from "@/../route"
 import { revalidatePath, } from "next/cache"
 
 
 export default async function Page() {
     async function refreshData() {
         'use server'
-    revalidatePath('/admin/suketTelahMenikah')
-
-    }
-    // revalidatePath('/admin/suketTelahMenikah')
-    async function setTrue(title: string) {
+        revalidatePath('/admin/suketTelahMenikah')
 
     }
 
     const postItem = await prisma.sukettelahmenikah.findMany({})
-    // const  
 
     return (
         <div className="min-h-screen ml-64 p-4">
@@ -47,28 +42,28 @@ export default async function Page() {
                     </tr>
                 </thead>
                 <tbody>
-                    {postItem.map((item)=>
+                    {postItem.map((item) =>
 
-                    <tr className="bg-slate-500 text-white">
-                        <td className="p-3">{String(item.createdAt)}</td>
-                        <td className="p-3">{item.namepria}</td>
-                        <td className="p-3">{item.nohppria}</td>
-                        <td className="p-3">{item.alamatpria}</td>
-                        <td className="p-3">{item.tempatLpria}</td>
-                        <td className="p-3">{item.tglLpria}</td>
-                        <td className="p-3">{item.agamapria}</td>
-                        <td className="p-3">{item.workpria}</td>
-                        <td className="p-3">{item.namewanita}</td>
-                        <td className="p-3">{item.nohpwanita}</td>
-                        <td className="p-3">{item.alamatwanita}</td>
-                        <td className="p-3">{item.tempatLwanita}</td>
-                        <td className="p-3">{item.tglLwanita}</td>
-                        <td className="p-3">{item.agamawanita}</td>
-                        <td className="p-3">{item.workwanita}</td>
-                        <td className="p-3">{item.tglnikah}</td>
-                        <td className="p-3">{item.lokasinikah}</td>
-                        <td className="p-3">{String(item.status)}</td>
-                    </tr>
+                        <tr className="bg-slate-500 text-white">
+                            <td className="p-3">{String(item.createdAt)}</td>
+                            <td className="p-3">{item.namepria}</td>
+                            <td className="p-3">{item.nohppria}</td>
+                            <td className="p-3">{item.alamatpria}</td>
+                            <td className="p-3">{item.tempatLpria}</td>
+                            <td className="p-3">{item.tglLpria}</td>
+                            <td className="p-3">{item.agamapria}</td>
+                            <td className="p-3">{item.workpria}</td>
+                            <td className="p-3">{item.namewanita}</td>
+                            <td className="p-3">{item.nohpwanita}</td>
+                            <td className="p-3">{item.alamatwanita}</td>
+                            <td className="p-3">{item.tempatLwanita}</td>
+                            <td className="p-3">{item.tglLwanita}</td>
+                            <td className="p-3">{item.agamawanita}</td>
+                            <td className="p-3">{item.workwanita}</td>
+                            <td className="p-3">{item.tglnikah}</td>
+                            <td className="p-3">{item.lokasinikah}</td>
+                            <td className="p-3">{String(item.status)}</td>
+                        </tr>
                     )}
                 </tbody>
             </table>

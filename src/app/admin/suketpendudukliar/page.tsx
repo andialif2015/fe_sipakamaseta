@@ -5,10 +5,10 @@ import { revalidatePath, } from "next/cache"
 export default async function Page() {
     async function refreshData() {
         'use server'
-        revalidatePath('/admin/imbsementara')
+        revalidatePath('/admin/suketpendudukliar')
     }
 
-    const postItem = await prisma.imbS.findMany({})
+    const postItem = await prisma.suketpendudukliar.findMany({})
 
     return (
         <div className="min-h-screen ml-64 p-4">
@@ -31,7 +31,6 @@ export default async function Page() {
                         <tr className="bg-slate-500 text-white">
                             <td className="p-3">{String(item.createdAt)}</td>
                             <td className="p-3">{item.name}</td>
-                            <td className="p-3">{item.nik}</td>
                             <td className="p-3">{item.nohp}</td>
                             <td className="p-3">{String(item.status)}</td>
                             <td className="p-3"><a href="#">Unduh</a></td>

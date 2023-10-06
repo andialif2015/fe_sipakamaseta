@@ -1,12 +1,12 @@
-import {prisma} from "@/../route"
+import { prisma } from "@/../route"
 import { revalidatePath, } from "next/cache"
 
 
 export default async function Page() {
-    
+
     async function refreshData() {
         'use server'
-    revalidatePath('/admin/suketjabatan')
+        revalidatePath('/admin/suketjabatan')
 
     }
 
@@ -25,30 +25,21 @@ export default async function Page() {
                     <tr className="">
                         <th className="p-3">Dibuat pada</th>
                         <th className="p-3">Nama</th>
-                        <th className="p-3">Tempat Lahir</th>
-                        <th className="p-3">Tanggal Lahir</th>
-                        <th className="p-3">Jenis Kelamin</th>
-                        <th className="p-3">Alamat</th>
-                        <th className="p-3">Jabatan</th>
-                        <th className="p-3">Lama Jabatan</th>
+                        <th className="p-3">No Hp</th>
                         <th className="p-3">Status Surat</th>
-
+                        <th className="p-3">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {postItem.map((item)=>
+                    {postItem.map((item) =>
 
-                    <tr className="bg-slate-500 text-white">
-                        <td className="p-3">{String(item.createdAt)}</td>
-                        <td className="p-3">{item.name}</td>
-                        <td className="p-3">{item.tempatL}</td>
-                        <td className="p-3">{item.tglL}</td>
-                        <td className="p-3">{item.gender}</td>
-                        <td className="p-3">{item.alamat}</td>
-                        <td className="p-3">{item.jabatan}</td>
-                        <td className="p-3">{item.lamajabatan}</td>
-                        <td className="p-3">{String(item.status)}</td>
-                    </tr>
+                        <tr className="bg-slate-500 text-white">
+                            <td className="p-3">{String(item.createdAt)}</td>
+                            <td className="p-3">{item.name}</td>
+                            <td className="p-3">{item.nohp}</td>
+                            <td className="p-3">{String(item.status)}</td>
+                            <td className="p-3"><a href="#">Unduh</a></td>
+                        </tr>
                     )}
                 </tbody>
             </table>

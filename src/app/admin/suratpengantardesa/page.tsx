@@ -1,4 +1,4 @@
-import {prisma} from "@/../route"
+import { prisma } from "@/../route"
 import { revalidatePath } from 'next/cache';
 
 
@@ -6,7 +6,7 @@ import { revalidatePath } from 'next/cache';
 export default async function Page() {
     async function refreshData() {
         'use server'
-    revalidatePath('/admin/suratpengantardesa')
+        revalidatePath('/admin/suratpengantardesa')
 
     }
     // revalidatePath('/admin/suratpengantardesa')
@@ -15,7 +15,6 @@ export default async function Page() {
     }
 
     const postItem = await prisma.spfromdesa.findMany({})
-    // const  
 
     return (
         <div className="min-h-screen ml-64 p-4">
@@ -42,22 +41,22 @@ export default async function Page() {
                     </tr>
                 </thead>
                 <tbody>
-                    {postItem.map((item)=>
+                    {postItem.map((item) =>
 
-                    <tr className="bg-slate-500 text-white">
-                        <td className="p-3">{String(item.createdAt)}</td>
-                        <td className="p-3">{item.name}</td>
-                        <td className="p-3">{item.nik}</td>
-                        <td className="p-3">{item.nohp}</td>
-                        <td className="p-3">{item.alamat}</td>
-                        <td className="p-3">{item.wargaN}</td>
-                        <td className="p-3">{item.tempatL}</td>
-                        <td className="p-3">{item.tglL}</td>
-                        <td className="p-3">{item.agama}</td>
-                        <td className="p-3">{item.work}</td>
-                        <td className="p-3">{item.tujuan}</td>
-                        <td className="p-3">{String(item.status)}</td>
-                    </tr>
+                        <tr className="bg-slate-500 text-white">
+                            <td className="p-3">{String(item.createdAt)}</td>
+                            <td className="p-3">{item.name}</td>
+                            <td className="p-3">{item.nik}</td>
+                            <td className="p-3">{item.nohp}</td>
+                            <td className="p-3">{item.alamat}</td>
+                            <td className="p-3">{item.wargaN}</td>
+                            <td className="p-3">{item.tempatL}</td>
+                            <td className="p-3">{item.tglL}</td>
+                            <td className="p-3">{item.agama}</td>
+                            <td className="p-3">{item.work}</td>
+                            <td className="p-3">{item.tujuan}</td>
+                            <td className="p-3">{String(item.status)}</td>
+                        </tr>
                     )}
                 </tbody>
             </table>

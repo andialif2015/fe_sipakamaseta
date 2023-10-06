@@ -5,7 +5,7 @@ import { revalidatePath, } from "next/cache"
 export default async function Page() {
     async function refreshData() {
         'use server'
-        revalidatePath('/admin/imbsementara')
+        revalidatePath('/admin/imbS')
     }
 
     const postItem = await prisma.imbS.findMany({})
