@@ -42,7 +42,7 @@ export default async function Page() {
                     </tr>
                 </thead>
                 <tbody>
-                    {postItem.map((item) =>
+                    {postItem.map((item: any) =>
 
                         <tr className="bg-slate-500 text-white">
                             <td className="p-3">{String(item.createdAt)}</td>
@@ -67,24 +67,6 @@ export default async function Page() {
                     )}
                 </tbody>
             </table>
-            {/* <div className="flex flex-col gap-3 w-full bg-slate-400 max-w-3xl mx-auto mt-3">
-            {postItem.map((item) =>
-            <div className="bg-gray-400 rounded-lg max-w-xl p-4 " >
-                <div className="flex flex-row gap-4 items-center ">
-
-                    <p>{item.title}</p>
-                    <p>{item.price}</p>
-                    <p>{item.kontak}</p>
-                    <p>{String(item.published)}</p>
-                    <div className="flex flex-row gap-4">
-                        <button className="bg-green-500 p-2 rounded-md">set true</button>
-                        <button className="bg-red-500 p-2 rounded-md">set false</button>
-                    </div>                
-                </div>
-            </div> 
-
-            )}
-                </div> */}
         </div>
     )
 }

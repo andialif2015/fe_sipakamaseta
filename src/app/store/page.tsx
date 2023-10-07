@@ -32,7 +32,7 @@ export default async function Page() {
             </div>
             {/* Item List */}
             <div className='flex flex-row flex-wrap justify-center gap-4 max-w-full py-4 bg-slate-300 rounded-t-3xl'>
-            {post.map((item)=>
+            {post.map((item: any)=>
                 <div className='basis-2/5 sm:basis-1/6 shadow-2xl rounded-xl bg-slate-100'>
                     <div className='flex flex-col h-full relative'>
                         <img className='rounded-xl object-cover w-full h-32 sm:max-h-44' src={item.content} alt="https://flowbite.com/docs/images/carousel/carousel-1.svg" />
