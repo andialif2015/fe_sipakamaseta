@@ -1,6 +1,4 @@
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
 
 function get_base_url(){
     if (process.env.NODE_ENV == 'production') {
