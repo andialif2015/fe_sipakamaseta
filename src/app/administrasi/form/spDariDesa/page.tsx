@@ -10,6 +10,7 @@ import fs from "fs";
 import React from "react";
 import ModalSurvey from "@/app/administrasi/survey/page";
 import axios from "axios";
+import { postAPI } from "@/utils/api";
 
 export default function Page() {
   
@@ -37,8 +38,8 @@ export default function Page() {
         tujuan: formData.get("for") as string,
       }
 
-      const sp = await axios.post("http://localhost:3002/api/v1/spfromdesa/buat", data);
-      if(sp.data.status){
+      const resp = await postAPI("spfromdesa/buat", data);
+      if(resp.status){
         setNama(data.name);
         setShowModal(true);
       }

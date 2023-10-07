@@ -6,6 +6,7 @@ import InputItem from "./inputItem";
 import ModalSurvey from "@/app/administrasi/survey/page";
 import axios from "axios";
 import React from "react";
+import { postAPI } from "@/utils/api";
 
 
 export default function Page() {
@@ -27,8 +28,8 @@ export default function Page() {
       work: formData.get('work') as string,
       alamat: formData.get('alamat') as string,
     };
-    let wali = await axios.post("http://localhost:3002/api/v1/suketwali/buat", data);
-    if (wali.status) {
+    const resp = await postAPI("suketpernyataanwaris/buat", data);
+    if (resp.status) {
       setNama(data.name);
       setShowModal(true);
     }
