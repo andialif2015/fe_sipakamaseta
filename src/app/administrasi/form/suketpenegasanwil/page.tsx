@@ -1,13 +1,12 @@
-'use client';
-import { prisma } from "@/../route"
-import { HiArrowSmLeft } from 'react-icons/hi';
-import Link from 'next/link'
+"use client";
+import { prisma } from "@/../route";
+import { HiArrowSmLeft } from "react-icons/hi";
+import Link from "next/link";
 import InputItem from "./inputItem";
-import ModalSurvey from "@/app/administrasi/survey/page";
+import ModalSurvey from "@/app/administrasi/survey/ModalSurvey";
 import axios from "axios";
 import React from "react";
 import { postAPI } from "@/utils/api";
-
 
 export default function Page() {
   const [isModalOpen, setShowModal] = React.useState(false);
@@ -21,10 +20,10 @@ export default function Page() {
 
     const formData = new FormData(event.currentTarget);
     const data = {
-      name: formData.get('name') as string,
-      nohp: formData.get('nohp') as string,
-      alamat: formData.get('alamat') as string,
-      jabatan: formData.get('jabatan') as string,
+      name: formData.get("name") as string,
+      nohp: formData.get("nohp") as string,
+      alamat: formData.get("alamat") as string,
+      jabatan: formData.get("jabatan") as string,
     };
     const resp = await postAPI("suketpenegasanwil/buat", data);
     if (resp.status) {
