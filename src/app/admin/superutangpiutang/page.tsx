@@ -20,7 +20,7 @@ interface PostItem {
 }
 export default async function Page() {
     async function refreshData() {
-        'use server'
+        // 'use server'
         revalidatePath('/admin/superutangpiutang')
     }
 
