@@ -43,9 +43,7 @@ export default async function Page() {
 
     return (
         <div className="min-h-screen ml-64 p-4">
-            <form action={refreshData}>
-                <button type="submit" className="bg-blue-500 p-4 mb-5 text-white rounded-xl">Update Data</button>
-            </form>
+
             <table className="table-auto">
                 <thead className="bg-slate-700 text-md text-slate-400 ">
                     <tr className="">
