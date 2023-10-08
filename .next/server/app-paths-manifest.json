@@ -1,7 +1,6 @@
 {
   "/page": "app/page.js",
-  "/admin/spDariDesa/page": "app/admin/spDariDesa/page.js",
-  "/admin/suketaktifperusahaan/page": "app/admin/suketaktifperusahaan/page.js",
-  "/admin/suketblmktp/page": "app/admin/suketblmktp/page.js",
-  "/admin/spkedesa/page": "app/admin/spkedesa/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/admin/spkedesa/page": "app/admin/spkedesa/page.js",
+  "/admin/spDariDesa/page": "app/admin/spDariDesa/page.js"
 }

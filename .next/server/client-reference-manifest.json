@@ -72,14 +72,6 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/admin/layout.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/admin/layout.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
     "(app-client)/./src/app/admin/spDariDesa/page.tsx": {
       "*": {
         "id": "(sc_client)/./src/app/admin/spDariDesa/page.tsx",
@@ -99,6 +91,14 @@
     "(app-client)/./src/app/administrasi/form/spDariDesa/page.tsx": {
       "*": {
         "id": "(sc_client)/./src/app/administrasi/form/spDariDesa/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/admin/layout.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/admin/layout.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -259,14 +259,6 @@
       ],
       "async": false
     },
-    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/layout.tsx": {
-      "id": "(app-client)/./src/app/admin/layout.tsx",
-      "name": "*",
-      "chunks": [
-        "app/admin/layout:static/chunks/app/admin/layout.js"
-      ],
-      "async": false
-    },
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/spDariDesa/page.tsx": {
       "id": "(app-client)/./src/app/admin/spDariDesa/page.tsx",
       "name": "*",
@@ -290,6 +282,14 @@
         "app/administrasi/form/spDariDesa/page:static/chunks/app/administrasi/form/spDariDesa/page.js"
       ],
       "async": false
+    },
+    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/layout.tsx": {
+      "id": "(app-client)/./src/app/admin/layout.tsx",
+      "name": "*",
+      "chunks": [
+        "app/admin/layout:static/chunks/app/admin/layout.js"
+      ],
+      "async": false
     }
   },
   "entryCSSFiles": {
@@ -299,14 +299,14 @@
     ],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/administrasi/page": [],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/page": [],
-    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/layout": [],
-    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/loading": [],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/imbS/page": [],
+    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/loading": [],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/spDariDesa/page": [],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/administrasi/form/imbS/page": [],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/administrasi/form/spDariDesa/page": [],
-    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/spkedesa/page": [],
+    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/layout": [],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/suketaktifperusahaan/page": [],
+    "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/spkedesa/page": [],
     "/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/admin/suketblmktp/page": []
   }
 }

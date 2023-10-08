@@ -21,20 +21,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/admin/page.js"
     ],
-    "/admin/layout": [
+    "/admin/imbS/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/layout.js"
+      "static/chunks/app/admin/imbS/page.js"
     ],
     "/admin/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/admin/loading.js"
-    ],
-    "/admin/imbS/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/imbS/page.js"
     ],
     "/admin/spDariDesa/page": [
       "static/chunks/webpack.js",
@@ -51,15 +46,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/administrasi/form/spDariDesa/page.js"
     ],
-    "/admin/spkedesa/page": [
+    "/admin/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/spkedesa/page.js"
+      "static/chunks/app/admin/layout.js"
     ],
     "/admin/suketaktifperusahaan/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/admin/suketaktifperusahaan/page.js"
+    ],
+    "/admin/spkedesa/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/spkedesa/page.js"
     ],
     "/admin/suketblmktp/page": [
       "static/chunks/webpack.js",
