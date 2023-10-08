@@ -29,7 +29,7 @@ export default async function Page() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const resp = await getAPI("superutangpiutang/all", {});
+                const resp = await getAPI("superUtangPiutang/all", {});
                 if (resp.status) {
                     setPostItem(resp.data.data);
                 }
