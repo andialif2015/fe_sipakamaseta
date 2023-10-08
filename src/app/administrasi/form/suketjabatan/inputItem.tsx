@@ -16,7 +16,7 @@ export default function InputItem() {
   const router = useRouter()
   function execute() {
     handleClick()
-    router.push('/')
+    router.push('/administrasi')
 
   }
 

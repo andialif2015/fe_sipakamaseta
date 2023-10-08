@@ -84,27 +84,27 @@ export default function InputItem() {
           <div className="flex flex-row gap-4">
             <div className="flex flex-col">
               <label
-                htmlFor="tgl"
+                htmlFor="tempatL"
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               >
                 Tempat Lahir
               </label>
               <input
-                name="tempatlahir"
+                name="tempatL"
                 type="text"
                 className="appearance-none block w-full p-4 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
             </div>
             <div className="flex flex-col">
               <label
-                htmlFor="tgl"
+                htmlFor="tglL"
                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               >
                 Tanggal Lahir
               </label>
               <PatternFormat
                 format="##/##/####"
-                name="tgl"
+                name="tglL"
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               ></PatternFormat>
               <span className="text-gray-500 text-sm">
@@ -150,7 +150,7 @@ export default function InputItem() {
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            name="pekerjaan"
+            name="work"
             type="text"
           />
         </div>
