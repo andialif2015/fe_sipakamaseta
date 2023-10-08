@@ -21,6 +21,7 @@ export default function Page() {
     const formData = new FormData(event.currentTarget);
     const data = {
       name: formData.get("name") as string,
+      nohp: formData.get("nohp") as string,
       tempatL: formData.get("tempatlahir") as string,
       tglL: formData.get("tgl") as string,
       gender: formData.get("gender") as string,
@@ -30,6 +31,8 @@ export default function Page() {
       stsnkh: formData.get("stsnkh") as string,
       alamat: formData.get("alamat") as string,
     };
+
+    console.log(data);
 
     const resp = await postAPI("suketdomisili/buat", data);
     if (resp.status) {
