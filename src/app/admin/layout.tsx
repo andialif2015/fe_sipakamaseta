@@ -37,7 +37,7 @@ export default function DashboardLayout({
       { name: 'Surat Keterangan Telah Menikah', to: '/admin/suketTelahMenikah' },
       { name: 'Surat Keterangan Untuk Nikah', to: '/admin/suketuntuknikah' },
       { name: 'Surat Keterangan Pengurusan Kartu Keluarga', to: '/admin/suketuruskk' },
-      { name: 'Surat Keterangan Wali Orang Tua', to: '/admin/suketWaliOrtu' },
+      { name: 'Surat Keterangan Wali Orang Tua', to: '/admin/suketwaliortu' },
       { name: 'Surat Pengantar Imunisasi', to: '/admin/superimunisasi' },
       { name: 'Surat Perjanjian Utang Piutang', to: '/admin/superutangpiutang' },
    ]
