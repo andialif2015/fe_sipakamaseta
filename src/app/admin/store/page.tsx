@@ -72,7 +72,7 @@ export default async function Page() {
                     </tr>
                 </thead>
                 <tbody>
-                    {postItem.map((item)=>
+                    {postItem.map((item: any)=>
 
                     <tr className="bg-slate-500 text-white">
                         <td className="p-3">{item.title}</td>
