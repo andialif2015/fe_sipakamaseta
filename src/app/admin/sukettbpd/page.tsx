@@ -1,6 +1,16 @@
-import { prisma } from "@/../route"
+'use client';
+import React from "react"
 import { revalidatePath, } from "next/cache"
+import { getAPI } from "@/utils/api"
 
+interface PostItem {
+    id: string,
+    createdAt: string,
+    name: string,
+    nohp: string,
+    status: string,
+    fileName: string,
+}
 
 export default async function Page() {
     async function refreshData() {
@@ -8,7 +18,23 @@ export default async function Page() {
         revalidatePath('/admin/sukettbpd')
     }
 
-    const postItem = await prisma.sukettbpd.findMany({})
+    const [postItem, setPostItem] = React.useState<PostItem[]>([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const resp = await getAPI("sukettbpd/all", {});
+                if (resp.status) {
+                    setPostItem(resp.data.data);
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        };
+
+        // Call the async function
+        fetchData();
+    }, []);
 
     return (
         <div className="min-h-screen ml-64 p-4">

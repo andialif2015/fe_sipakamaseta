@@ -1,7 +1,22 @@
-import { prisma } from "@/../route"
-import { revalidatePath } from 'next/cache';
+'use client';
+import React from "react"
+import { revalidatePath, } from "next/cache"
+import { getAPI } from "@/utils/api"
 
-
+interface PostItem {
+    createdAt: string,
+    id: string,
+    name: string,
+    nik: string,
+    alamat: string,
+    gender: string,
+    work: string,
+    agama: string,
+    rtrw: string,
+    dusun: string,
+    status: string,
+    fileName: string,
+}
 
 export default async function Page() {
     async function refreshData() {
@@ -14,8 +29,23 @@ export default async function Page() {
 
     }
 
-    const postItem = await prisma.spfromdesa.findMany({})
+    const [postItem, setPostItem] = React.useState<PostItem[]>([]);
 
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const resp = await getAPI("spfromdesa/all", {});
+                if (resp.status) {
+                    setPostItem(resp.data.data);
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        };
+
+        // Call the async function
+        fetchData();
+    }, []);
     return (
         <div className="min-h-screen ml-64 p-4">
             <form action={refreshData}>

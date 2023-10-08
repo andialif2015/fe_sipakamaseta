@@ -1,20 +1,48 @@
-import {prisma} from "@/../route"
+'use client';
+import React from "react"
 import { revalidatePath, } from "next/cache"
+import { getAPI } from "@/utils/api"
+
+interface PostItem {
+    id: string,
+    createdAt: string,
+    name: string,
+    nohp: string,
+    nik: string,
+    alamat: string,
+    gender: string,
+    agama: string,
+    work: string,
+    rtrw: string,
+    dusun: string,
+    status: string,
+    fileName: string,
+}
 
 export default async function Page() {
     async function refreshData() {
         'use server'
-    revalidatePath('/admin/suketblmpunyarumah')
-
-    }
-    // revalidatePath('/admin/suketblmpunyarumah')
-
-    async function setTrue(title: string) {
+        revalidatePath('/admin/suketblmpunyarumah')
 
     }
 
-    const postItem = await prisma.suketblmpunyarumah.findMany({})
-    // const  
+    const [postItem, setPostItem] = React.useState<PostItem[]>([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const resp = await getAPI("suketblmpunyarumah/all", {});
+                if (resp.status) {
+                    setPostItem(resp.data.data);
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        };
+
+        // Call the async function
+        fetchData();
+    }, []);
 
     return (
         <div className="min-h-screen ml-64 p-4">
@@ -39,20 +67,20 @@ export default async function Page() {
                     </tr>
                 </thead>
                 <tbody>
-                    {postItem.map((item: any)=>
+                    {postItem.map((item: any) =>
 
-                    <tr className="bg-slate-500 text-white">
-                        <td className="p-3">{String(item.createdAt)}</td>
-                        <td className="p-3">{item.name}</td>
-                        <td className="p-3">{item.nik}</td>
-                        <td className="p-3">{item.alamat}</td>
-                        <td className="p-3">{item.gender}</td>
-                        <td className="p-3">{item.work}</td>
-                        <td className="p-3">{item.agama}</td>
-                        <td className="p-3">{item.rtrw}</td>
-                        <td className="p-3">{item.dusun}</td>
-                        <td className="p-3">{String(item.status)}</td>
-                    </tr>
+                        <tr className="bg-slate-500 text-white">
+                            <td className="p-3">{String(item.createdAt)}</td>
+                            <td className="p-3">{item.name}</td>
+                            <td className="p-3">{item.nik}</td>
+                            <td className="p-3">{item.alamat}</td>
+                            <td className="p-3">{item.gender}</td>
+                            <td className="p-3">{item.work}</td>
+                            <td className="p-3">{item.agama}</td>
+                            <td className="p-3">{item.rtrw}</td>
+                            <td className="p-3">{item.dusun}</td>
+                            <td className="p-3">{String(item.status)}</td>
+                        </tr>
                     )}
                 </tbody>
             </table>

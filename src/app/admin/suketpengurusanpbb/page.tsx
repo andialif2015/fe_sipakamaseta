@@ -1,6 +1,26 @@
-import { prisma } from "@/../route"
+'use client';
+import React from "react"
 import { revalidatePath, } from "next/cache"
+import { getAPI } from "@/utils/api"
 
+interface PostItem {
+    id: string,
+    createdAt: string,
+    name: string,
+    nohp: string,
+    nik: string,
+    tempatL: string,
+    tglL: string,
+    gender: string,
+    agama: string,
+    work: string,
+    alamat: string,
+    dusun: string,
+    rtrw: string,
+    nama_anak: string,
+    status: string,
+    fileName: string,
+}
 
 export default async function Page() {
     async function refreshData() {
@@ -8,7 +28,23 @@ export default async function Page() {
         revalidatePath('/admin/suketpengurusanpbb')
     }
 
-    const postItem = await prisma.suketpengurusanpbb.findMany({})
+    const [postItem, setPostItem] = React.useState<PostItem[]>([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const resp = await getAPI("suketpengurusanpbb/all", {});
+                if (resp.status) {
+                    setPostItem(resp.data.data);
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        };
+
+        // Call the async function
+        fetchData();
+    }, []);
 
     return (
         <div className="min-h-screen ml-64 p-4">
