@@ -1,5 +1,5 @@
 "use client";
-import { prisma } from "@/../route";
+
 import { HiArrowSmLeft } from "react-icons/hi";
 import Link from "next/link";
 import InputItem from "./inputItem";
