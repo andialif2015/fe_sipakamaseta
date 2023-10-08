@@ -59,6 +59,7 @@ export default async function Page() {
                         <tr className="bg-slate-500 text-white">
                             <td className="p-3">{String(item.createdAt)}</td>
                             <td className="p-3">{item.name}</td>
+                            <td className="p-3">{item.nik}</td>
                             <td className="p-3">{item.nohp}</td>
                             <td className="p-3">{String(item.status)}</td>
                             <td className="p-3"><a href="#">Unduh</a></td>
