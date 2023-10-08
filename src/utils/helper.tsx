@@ -2,7 +2,7 @@ import Docxtemplater from 'docxtemplater';
 import fs from 'fs';
 import path from 'path';
 import PizZip from 'pizzip';
-import { prisma } from "@/../route";
+// import { prisma } from "@/../route";
 
 
 export async function generateWordDocument(data: FormData, templatePath: string, jenis: string, _id: number) {
@@ -11,8 +11,8 @@ export async function generateWordDocument(data: FormData, templatePath: string,
     const templateContent = fs.readFileSync(templatePath, "binary");
     const zip = new PizZip(templateContent);
     const doc = new Docxtemplater(zip);
-    let dataForm = { };
-    if(jenis == 'spdaridesa'){
+    let dataForm = {};
+    if (jenis == 'spdaridesa') {
       dataForm = setDataSPDesa(data);
     }
 
@@ -26,14 +26,14 @@ export async function generateWordDocument(data: FormData, templatePath: string,
     const outputPath = path.join(__dirname, `../../../../../../public/dokumen/${fileName}`);
     const buffer = doc.getZip().generate({ type: 'nodebuffer' }); // Use generate() to get buffer
 
-    await prisma.spfromdesa.update({
-      where: {
-        id: _id,
-      },
-      data: {
-        fileName: fileName
-      }
-    });
+    // await prisma.spfromdesa.update({
+    //   where: {
+    //     id: _id,
+    //   },
+    //   data: {
+    //     fileName: fileName
+    //   }
+    // });
 
     fs.writeFileSync(outputPath, buffer); // Write the buffer to the file
 
@@ -44,7 +44,7 @@ export async function generateWordDocument(data: FormData, templatePath: string,
   }
 }
 
-function setDataSPDesa(data: FormData){
+function setDataSPDesa(data: FormData) {
   return {
     name: data.get('name') as string,
     tempatlahir: data.get('tempatlahir') as string,
