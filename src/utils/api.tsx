@@ -17,3 +17,20 @@ export const postAPI = async (endpoint: string, data: any) => {
         throw error
     }
 }
+
+export const getAPI = async(endpoint: string, params: any) => {
+  try {
+    
+    let api = get_base_url() + endpoint;
+
+    if(params){
+      const querystring = Object.keys(params).map((key) => { `${key}=${params[key]}` }).join('&');
+      api += `?${querystring}`;
+    }
+
+    const resp = await axios.get(api);
+    return resp;
+  } catch (error) {
+    throw error
+  }
+}
