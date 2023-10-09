@@ -1,10 +1,7 @@
 // 'use client'
 import { HiArrowSmLeft } from 'react-icons/hi';
 import Link from 'next/link';
-// import axios from 'axios';
-// import {useState} from 'react'
-import {prisma} from "@/../route"
-// import {NumericFormat} from 'react-number-format';
+// import {prisma} from "@/../route"
 import { revalidatePath } from 'next/cache';
 import Handle from '@/app/components/uploadAction'
 
@@ -13,18 +10,17 @@ export default function Page() {
     async function addData(dataF: FormData) {
         'use server'
         const linkwa = `https://wa.me/+62${dataF.get("kontak") as string}`
-        const form = await prisma.post.create({
-            data:{
-                title: dataF.get('title') as string,
-                price: dataF.get('price') as string,
-                content: dataF.get('urlImg') as string,
-                kontak: linkwa,
-                // kontak: dataF.get('kontak') as string,
-            }
-        })
+        // const form = await prisma.post.create({
+        //     data: {
+        //         title: dataF.get('title') as string,
+        //         price: dataF.get('price') as string,
+        //         content: dataF.get('urlImg') as string,
+        //         kontak: linkwa,
+        //     }
+        // })
         revalidatePath('/store')
         revalidatePath('/')
-        
+
 
 
     }
@@ -35,7 +31,7 @@ export default function Page() {
                     <HiArrowSmLeft className='h-6 w-6 t m-2 ext-black' />
                     <h1 className="font-bold text-center m-2">Tambah Produk Kamu</h1>
                 </Link>
-                
+
             </div>
 
 
@@ -56,7 +52,7 @@ export default function Page() {
 
                     <Handle />
                 </div>
-                    {/* <button className='bg-black text-white ml-4 p-2 rounded-lg' type='submit'>Tambah Produk</button> */}
+                {/* <button className='bg-black text-white ml-4 p-2 rounded-lg' type='submit'>Tambah Produk</button> */}
 
 
             </form>
