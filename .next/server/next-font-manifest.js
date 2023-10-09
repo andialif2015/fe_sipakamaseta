@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/andialifikhlasulamal/Documents/project/sipakamaseta/src/app/layout\":[\"static/media/7777133e901cd5ed-s.p.woff2\",\"static/media/edcb96820d9d2f70-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

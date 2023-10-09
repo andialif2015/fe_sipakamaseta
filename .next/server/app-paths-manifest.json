@@ -1,6 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/admin/spkedesa/page": "app/admin/spkedesa/page.js",
-  "/admin/spDariDesa/page": "app/admin/spDariDesa/page.js"
-}
