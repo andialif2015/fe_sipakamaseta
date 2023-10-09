@@ -1,16 +1,8 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
-import axios from "axios";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import { postAPI } from "@/utils/api";
 import { ModalSurveyProps } from "./modalSurveyProps";
-
-// export interface ModalSurveyProps {
-//   show: boolean;
-//   onClose: () => void;
-//   name: string;
-// }
+import { revalidatePath, } from "next/cache"
 
 const ModalSurvey: React.FC<ModalSurveyProps> = ({ show, onClose, name }) => {
   const [value, setValue] = React.useState<number | null>(0);
@@ -66,9 +58,12 @@ const ModalSurvey: React.FC<ModalSurveyProps> = ({ show, onClose, name }) => {
       if (survey.data.status) {
         setOpen(true);
         onClose();
+        console.log(survey.data);
+        window.location.href = "/administrasi";
       }
-    } catch (err) {}
+    } catch (err) { }
   }
+
   const handleClose = (
     event?: React.SyntheticEvent | Event,
     reason?: string
@@ -76,7 +71,6 @@ const ModalSurvey: React.FC<ModalSurveyProps> = ({ show, onClose, name }) => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
 

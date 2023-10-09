@@ -16,8 +16,6 @@ export default function InputItem() {
   const router = useRouter()
   function execute() {
     handleClick()
-    router.push('/')
-
   }
 
   const [open, setOpen] = React.useState(false);
