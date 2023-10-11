@@ -4,7 +4,6 @@ import { HiArrowSmLeft } from "react-icons/hi";
 import Link from "next/link";
 import InputItem from "./inputItem";
 import ModalSurvey from "@/app/administrasi/survey/ModalSurvey";
-import axios from "axios";
 import React from "react";
 import { postAPI } from "@/utils/api";
 
@@ -29,6 +28,7 @@ export default function Page() {
       rtrw: formData.get("rtrw") as string,
       dusun: formData.get("dusun") as string,
     };
+
     const resp = await postAPI("suketblmpunyarumah/buat", data);
     if (resp.status) {
       setNama(data.name);

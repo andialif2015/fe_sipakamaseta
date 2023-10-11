@@ -7,7 +7,7 @@ import ModalSurvey from "@/app/administrasi/survey/ModalSurvey";
 import React from "react";
 import { postAPI } from "@/utils/api";
 
-export default async function Page() {
+export default function Page() {
   const [isModalOpen, setShowModal] = React.useState(false);
   const closeModal = () => {
     setShowModal(false);
@@ -46,7 +46,6 @@ export default async function Page() {
       </div>
       <form className="w-full max-w-lg mx-auto p-4" onSubmit={submitData}>
         <InputItem />
-        <button type="submit">Generate Certificate</button>
       </form>
       <ModalSurvey
         show={isModalOpen}
