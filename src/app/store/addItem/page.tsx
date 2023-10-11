@@ -1,14 +1,16 @@
-// 'use client'
+'use client'
+import React from 'react';
 import { HiArrowSmLeft } from 'react-icons/hi';
 import Link from 'next/link';
 // import {prisma} from "@/../route"
 import { revalidatePath } from 'next/cache';
 import Handle from '@/app/components/uploadAction'
+import { postAPI } from '@/utils/api';
 
 export default function Page() {
 
     async function addData(dataF: FormData) {
-        'use server'
+        
         const linkwa = `https://wa.me/+62${dataF.get("kontak") as string}`
         // const form = await prisma.post.create({
         //     data: {
@@ -21,9 +23,29 @@ export default function Page() {
         revalidatePath('/store')
         revalidatePath('/')
 
-
-
     }
+
+    async function submitData(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        try {
+            const formData = new FormData(event.currentTarget);
+            const data = {
+                title: formData.get('title') as string,
+                price: formData.get('price') as string,
+                kontak: formData.get('kontak') as string,
+                file: formData.get('image') as File,
+            }
+
+            const resp = await postAPI('post/buat', data);
+            if(resp.data.status){
+                window.location.href = "/store";
+            }
+
+        } catch (error) {
+            
+        }
+    }
+
     return (
         <div className="min-h-screen">
             <div className='flex flex-row content-center p-4'>
@@ -35,7 +57,7 @@ export default function Page() {
             </div>
 
 
-            <form className='mx-auto w-full max-w-lg p-3' id='addStore' action={addData}>
+            <form className='mx-auto w-full max-w-lg p-3' id='addStore' onSubmit={submitData}>
                 <div className='flex flex-col'>
                     <div className='flex flex-wrap mx-4 mb-6'>
                         <label className='font-semibold w-full' htmlFor="">Nama Produk</label>

@@ -129,7 +129,7 @@ export default function handleFile() {
                         </DialogContent>
                         <DialogActions>
                             <Button onClick={handleClose}>Kembali</Button>
-                            <Button form="addStore" type='submit' onClick={handleSubmit}>Kirim</Button>
+                            <Button form="addStore" type='submit'>Kirim</Button>
                         </DialogActions>
                     </Dialog>
                 </div>
