@@ -35,7 +35,7 @@ export default function Page() {
     };
 
 
-    let wali = await postAPI("suketwali/buat", data);
+    let wali = await postAPI("imbs/buat", data);
 
     if (wali.status) {
       setNama(data.name);
