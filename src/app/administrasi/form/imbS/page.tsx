@@ -1,11 +1,12 @@
 "use client";
 import { HiArrowSmLeft } from "react-icons/hi";
 import Link from "next/link";
-// import FormItem from "@/app/components/formItem";
+
 import InputItem from "./InputItem";
 import ModalSurvey from "@/app/administrasi/survey/ModalSurvey";
-import axios from "axios";
+
 import React from "react";
+import { postAPI } from "@/utils/api";
 
 export default function Page() {
   const [isModalOpen, setShowModal] = React.useState(false);
@@ -33,10 +34,8 @@ export default function Page() {
       buildsize: formData.get("buildsize") as string,
     };
 
-    let wali = await axios.post(
-      "http://localhost:3002/api/v1/suketwali/buat",
-      data
-    );
+
+    let wali = await postAPI("suketwali/buat", data);
 
     if (wali.status) {
       setNama(data.name);

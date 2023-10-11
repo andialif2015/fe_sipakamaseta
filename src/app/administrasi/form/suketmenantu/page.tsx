@@ -30,7 +30,9 @@ export default function Page() {
       tglLMertua: formData.get("tglmertua") as string,
       alamatmertua: formData.get("alamatmertua") as string,
     };
+
     const resp = await postAPI("suketmenantu/buat", data);
+
     if (resp.status) {
       setNama(data.name);
       setShowModal(true);

@@ -30,6 +30,7 @@ export default function Page() {
       agama: formData.get("agama") as string,
       work: formData.get("work") as string,
     };
+
     const resp = await postAPI("superimunisasi/buat", data);
     if (resp.status) {
       setNama(data.name);
