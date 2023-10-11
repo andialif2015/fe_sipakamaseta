@@ -2,6 +2,7 @@
 import React from "react"
 import { revalidatePath, } from "next/cache"
 import { getAPI } from "@/utils/api"
+import { getBaseUrl } from "@/utils/helper";
 
 interface PostItem {
     id: string,
@@ -46,6 +47,10 @@ export default async function Page() {
         fetchData();
     }, []);
 
+    function getDownloadURL(filename: string): string {
+        return getBaseUrl() + 'download?filename=' + filename;
+    }
+
     return (
         <div className="min-h-screen ml-64 p-4">
 
@@ -68,7 +73,9 @@ export default async function Page() {
                             <td className="p-3">{item.nik}</td>
                             <td className="p-3">{item.nohp}</td>
                             <td className="p-3">{String(item.status)}</td>
-                            <td className="p-3"><a href="#">Unduh</a></td>
+                            <td className="p-3">
+                                <a href={getDownloadURL(item.fileName)}>Unduh</a>
+                            </td>
                         </tr>
                     )}
                 </tbody>
