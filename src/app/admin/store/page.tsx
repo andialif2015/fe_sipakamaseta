@@ -1,107 +1,136 @@
+'use client';
+import React from "react";
 import {prisma} from "@/../route"
 import { revalidatePath, } from "next/cache"
+import { getAPI, deleteAPI, putAPI } from "@/utils/api";
 
-
-// export const revalidate = 3
+interface Post {
+  id: string;
+  title: string;
+  createdAt: string;
+  content: string;
+  published: boolean;
+  kontak: string;
+  price: number;
+}
 
 export default async function Page() {
 
+    const [postItem, setPostItem] = React.useState<Post[]>([]);
 
-    async function deleteUser(userData: FormData) {
-        'use server'
-        const num = Number(userData.get('id'))
-        const del = await prisma.post.delete({
-            where: {
-                id: num
-                // title: userData.get('title') as string,
-                // price: userData.get('price') as string
-            },
-        })
-        revalidatePath('/admin/store')
-        revalidatePath('/store')
+    React.useEffect(() => {
+      getPosts();
+    }, []);
+
+    async function getPosts() {
+      try {
+        const response = await getAPI("post/all", {});
+        if (response.status) {
+          setPostItem(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
 
-    async function unpublishPost(userData: FormData) {
-        'use server'
-        const num = Number(userData.get('id'))
-        const del = await prisma.post.update({
-            where: {
-                id: num
-                // title: userData.get('title') as string,
-                // price: userData.get('price') as string
-            },
-            data: {
-                published: false
+    
+
+    const deletePost = async(item: any) => {
+        try {
+            const url = "post/delete/" + item.id;
+            const response = await deleteAPI(url);
+            if(response.status){
+                getPosts();
             }
-        })
-        revalidatePath('/admin/store')
-        revalidatePath('/store')
+        } catch (error) {
+            console.log(error)
+        }
     }
 
-    async function publishPost(userData: FormData) {
-        'use server'
-        const num = Number(userData.get('id'))
-        const del = await prisma.post.update({
-            where: {
-                id: num
-                // title: userData.get('title') as string,
-                // price: userData.get('price') as string
-            },
-            data: {
-                published: true
-            }
-        })
-        revalidatePath('/admin/store')
+    const unpublishPost = async(item: any) => {
+        try {
+          const url = "post/unpublish/" + item.id;
+          const response = await putAPI(url,{});
+          if (response.status) {
+            getPosts();
+          }
+        } catch (error) {
+          console.log(error);
+        }
     }
 
-    const postItem = await prisma.post.findMany({})
-    // const  
+    const publishPost = async(item: any) => {
+        try {
+          const url = "post/publish/" + item.id;
+          const response = await putAPI(url,{});
+          if (response.status) {
+            getPosts();
+          }
+        } catch (error) {
+          console.log(error);
+        }
+    }
 
     return (
-        <div className="min-h-screen ml-64 p-4">
-            <table className="table-auto">
-                <thead className="bg-slate-700 text-md text-slate-400 ">
-                    <tr className="">
-                        <th className="p-3">Judul Produk</th>
-                        <th className="p-3">Harga Produk</th>
-                        <th className="p-3">Kontak Penjual</th>
-                        <th className="p-3">Status Produk</th>
-                        <th className="p-3">Delete</th>
-                        <th className="p-3">Unpublish</th>
-                        <th className="p-3">Publish</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {postItem.map((item: any)=>
+      <div className="min-h-screen ml-64 p-4">
+        <table className="table-auto">
+          <thead className="bg-slate-700 text-md text-slate-400 ">
+            <tr className="">
+              <th className="p-3">Judul Produk</th>
+              <th className="p-3">Harga Produk</th>
+              <th className="p-3">Kontak Penjual</th>
+              <th className="p-3">Status Produk</th>
+              <th className="p-3">Delete</th>
+              <th className="p-3">Unpublish</th>
+              <th className="p-3">Publish</th>
+            </tr>
+          </thead>
+          <tbody>
+            {postItem.map((item: any) => (
+              <tr className="bg-slate-500 text-white">
+                <td className="p-3">{item.title}</td>
+                <td className="p-3">Rp.{item.price}</td>
+                <td className="p-3">{item.kontak}</td>
+                <td className="p-3">{String(item.published)}</td>
+                <td>
+                  <button
+                    onClick={() => {
+                      deletePost(item);
+                    }}
+                    type="button"
+                    className="p-2 bg-red-500 rounded-lg"
+                  >
+                    delete
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      unpublishPost(item);
+                    }}
+                    type="button"
+                    className="p-2 bg-yellow-500 rounded-lg"
+                  >
+                    unpublish
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      publishPost(item);
+                    }}
+                    type="button"
+                    className="p-2 bg-green-500 rounded-lg"
+                  >
+                    publish
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-                    <tr className="bg-slate-500 text-white">
-                        <td className="p-3">{item.title}</td>
-                        <td className="p-3">Rp.{item.price}</td>
-                        <td className="p-3">{item.kontak}</td>
-                        <td className="p-3">{String(item.published)}</td>
-                        <td>
-                            <form action={deleteUser}>
-                                <input name="id" type="hidden" value={String(item.id)} />
-                                <button type='submit' className="p-2 bg-red-500 rounded-lg">delete</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action={unpublishPost}>
-                                <input name="id" type="hidden" value={String(item.id)} />
-                                <button type='submit' className="p-2 bg-red-700 rounded-lg">unpublish</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action={publishPost}>
-                                <input name="id" type="hidden" value={String(item.id)} />
-                                <button type='submit' className="p-2 bg-green-500 rounded-lg">publish</button>
-                            </form>
-                        </td>
-                    </tr>
-                    )}
-                </tbody>
-            </table>
-            {/* <div className="flex flex-col gap-3 w-full bg-slate-400 max-w-3xl mx-auto mt-3">
+        {/* <div className="flex flex-col gap-3 w-full bg-slate-400 max-w-3xl mx-auto mt-3">
             {postItem.map((item) =>
             <div className="bg-gray-400 rounded-lg max-w-xl p-4 " >
                 <div className="flex flex-row gap-4 items-center ">
@@ -119,6 +148,6 @@ export default async function Page() {
 
             )}
                 </div> */}
-        </div>
-    )
+      </div>
+    );
 }
