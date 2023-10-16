@@ -62,5 +62,6 @@ export const getAPI = async(endpoint: string, params: any) => {
     return resp;
   } catch (error) {
     throw error
+
   }
 }
